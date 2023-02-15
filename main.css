@@ -1,0 +1,10 @@
+.body_full {
+    display: flex; 
+    flex-direction: column;
+}
+
+.nav-bar {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+}
