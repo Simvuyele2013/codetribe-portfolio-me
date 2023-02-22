@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <body style="background-color:#F2DEBA;"></body>
-<title>Codetribe</title>
+    <head>
+        <title>Codetribe</title>
+        <link rel="stylesheet" href="./main.css" />
+    </head>
 
 <body style="display: flex; flex-direction: column;">
     <header style="height: 15vh;">
@@ -18,20 +20,18 @@
     <main>
         <section style="height: 20vh; display: flex; flex-direction: column;">
             <h1 style="color: #6C00FF;">Contact Me</h1>
-            <p style="color: #6C00FF;"> Question? Comments? Reach me here: <a href="mailto:#">skmageza</a></p>
+            <p style="color: #6C00FF;"> Question? Comments? Reach me here:
         </section>
         <section style="padding: 5vh; display: flex; flex-direction:column;">
-            <form>
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname"><br>
-                <label for="lname">Surname:</label><br>
-                <input type="text" id="lname" name="lname"><br>
-                <label for="Email">Email address:</label><br>
-                <input type="text" id="Email" name="Email"><br>
-                <label for="Message">Message</label><br>
-                <input type="text" id="message" name="message" size="50"><br>
-                <input type="submit" value="Submit"><br>
-              </form>
+            <!-- modify this form HTML and place wherever you want your form -->
+            <form id="my-form" action="https://formspree.io/f/xknarqqa" method="POST">
+                <label>Email:</label>
+                <input type="email" name="email" />
+                <label>Message:</label>
+                <textarea type="text" name="message"  rows="4" cols="50" ></textarea>
+                <button id="my-form-button">Send</button>
+                <p id="my-form-status"></p>
+            </form>
 
         </section>
 
@@ -44,49 +44,79 @@
                 
         </section>
     </main>
-    <footer>
-        <div style=" display: flex; flex-direction: row;">
-            <div style="display: flex; flex-direction: column; flex-grow: 1;">
-                <!-- Links and more -->
-                <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                    <div>
-                        <!-- Address here -->
-                        <h5>Address:</h5>
-                        <address>
-                            48 Stormvoel Avenue,
-                            Cashan,
-                            Rustenburg,
-                            0299
-                        </address>
-                    </div>
-                    <div>
-                        <h5>Additional links:</h5>
-                        <!-- Additional quick links here -->
-                        <div style="display: flex; flex-direction: column;">
-                            <a href="https://twitter.com/simzzz_xoxo">Twitter</a>
-                            <a href="https://twitter.com/simzzz_xoxo">Twitter</a>
-                        </div>
-                    </div>
-                </div>
-                <div style="flex-grow: 1;"></div>
+    <script src="./script.js"></script>
+    <script>
+        var form = document.getElementById("my-form");
+        
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var status = document.getElementById("my-form-status");
+          var data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              status.innerHTML = "Thanks for your submission!";
+              form.reset()
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+</body>
+<footer>
+    <div style=" display: flex; flex-direction: row;">
+        <div style="display: flex; flex-direction: column; flex-grow: 1;">
+            <!-- Links and more -->
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div>
-                    <!-- Social icons -->
-                        <a href="https://twitter.com/simzzz_xoxo">T</a>
-                        <a href="https://twitter.com/simzzz_xoxo">F</a>
-                        <a href="https://twitter.com/simzzz_xoxo">I</a>
+                    <!-- Address here -->
+                    <h5>Address:</h5>
+                    <address>
+                        48 Stormvoel Avenue,
+                        Cashan,
+                        Rustenburg,
+                        0299
+                    </address>
+                </div>
+                <div>
+                    <h5>Additional links:</h5>
+                    <!-- Additional quick links here -->
+                    <div style="display: flex; flex-direction: column;">
+                        <a href="https://twitter.com/simzzz_xoxo">Twitter</a>
+                        <a href="https://twitter.com/simzzz_xoxo">Twitter</a>
+                    </div>
                 </div>
             </div>
             <div style="flex-grow: 1;"></div>
             <div>
-                <!-- Embed map here -->
-                <h5>Map:</h5>
-                <div style="max-width:100%;overflow:hidden;color:red;width:300px;height:100px;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Rustenburg&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="google-maps-html" href="https://www.bootstrapskins.com/themes" id="authorize-map-data">premium bootstrap themes</a><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+                <!-- Social icons -->
+                    <a href="https://twitter.com/simzzz_xoxo">T</a>
+                    <a href="https://twitter.com/simzzz_xoxo">F</a>
+                    <a href="https://twitter.com/simzzz_xoxo">I</a>
             </div>
         </div>
-    </footer>
-
-
-
-</body>
+        <div style="flex-grow: 1;"></div>
+        <div>
+            <!-- Embed map here -->
+            <h5>Map:</h5>
+            <div style="max-width:100%;overflow:hidden;color:red;width:300px;height:100px;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Rustenburg&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="google-maps-html" href="https://www.bootstrapskins.com/themes" id="authorize-map-data">premium bootstrap themes</a><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        </div>
+    </div>
+</footer>
 
 </html>

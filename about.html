@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <body style="background-color:#F2DEBA;"></body>
-<title>Codetribe</title>
+    <head>
+        <title>About - Simvuyele Mabaleka -</title>
+        <link rel="stylesheet" href="./main.css" />
+    </head>
 
 <body style="display: flex; flex-direction: column;">
     <header style="height: 15vh;">
@@ -19,10 +21,8 @@
         <section
             style="height: 100vh; display: flex; flex-grow: 1; justify-content: space-between;gap: 7vw">
             <div style="display: flex; flex-direction: column; max-width: 50vw; padding: 4em;">
-                <h1 style="color: #6C00FF;">Simvuyele Mabaleka</h1>
-                <p style="font-size: x-large; color: #6C00FF;">Hello! And welcome to my page. I am Simvuyele Mabaleka, a budding web developer and love all things tech. 
-                    I am married to a fellow techie and we live in Rustenburg with our toddler son.  I worked as a crime journalist before moving into 
-                    Corporate Communications. I am currently transitioning over to web development as the next adventure in my work life.
+                <h1 style="color: #6C00FF;" id="fullname"></h1>
+                <p style="font-size: x-large; color: #6C00FF;" id="biography">
                 </p>
             </div>
             <img style="display: flex; flex-wrap: wrap;"" src="person img.png" alt="">
@@ -31,49 +31,44 @@
                 
         </section>
     </main>
-    <footer>
-        <div style=" display: flex; flex-direction: row;">
-            <div style="display: flex; flex-direction: column; flex-grow: 1;">
-                <!-- Links and more -->
-                <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                    <div>
-                        <!-- Address here -->
-                        <h5>Address:</h5>
-                        <address>
-                            48 Stormvoel Avenue,
-                            Cashan,
-                            Rustenburg,
-                            0299
-                        </address>
-                    </div>
-                    <div>
-                        <h5>Additional links:</h5>
-                        <!-- Additional quick links here -->
-                        <div style="display: flex; flex-direction: column;">
-                            <a href="https://twitter.com/simzzz_xoxo">Twitter</a>
-                            <a href="https://twitter.com/simzzz_xoxo">Twitter</a>
-                        </div>
-                    </div>
-                </div>
-                <div style="flex-grow: 1;"></div>
+    
+    <script src="./script.js"></script>
+</body>
+<footer>
+    <div style=" display: flex; flex-direction: row;">
+        <div style="display: flex; flex-direction: column; flex-grow: 1;">
+            <!-- Links and more -->
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div>
-                    <!-- Social icons -->
-                        <a href="https://twitter.com/simzzz_xoxo">T</a>
-                        <a href="https://twitter.com/simzzz_xoxo">F</a>
-                        <a href="https://twitter.com/simzzz_xoxo">I</a>
+                    <!-- Address here -->
+                    <h5>Address:</h5>
+                    <address id="address">
+                    </address>
+                </div>
+                <div>
+                    <h5>Additional links:</h5>
+                    <!-- Additional quick links here -->
+                    <div style="display: flex; flex-direction: column;">
+                        <a href="https://twitter.com/simzzz_xoxo">Twitter</a>
+                        <a href="https://twitter.com/simzzz_xoxo">Twitter</a>
+                    </div>
                 </div>
             </div>
             <div style="flex-grow: 1;"></div>
             <div>
-                <!-- Embed map here -->
-                <h5>Map:</h5>
-                <div style="max-width:100%;overflow:hidden;color:red;width:300px;height:100px;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Rustenburg&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="google-maps-html" href="https://www.bootstrapskins.com/themes" id="authorize-map-data">premium bootstrap themes</a><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+                <!-- Social icons -->
+                    <a href="https://twitter.com/simzzz_xoxo">T</a>
+                    <a href="https://twitter.com/simzzz_xoxo">F</a>
+                    <a href="https://twitter.com/simzzz_xoxo">I</a>
             </div>
         </div>
-    </footer>
-
-
-
-</body>
+        <div style="flex-grow: 1;"></div>
+        <div>
+            <!-- Embed map here -->
+            <h5>Map:</h5>
+            <div style="max-width:100%;overflow:hidden;color:red;width:300px;height:100px;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Rustenburg&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="google-maps-html" href="https://www.bootstrapskins.com/themes" id="authorize-map-data">premium bootstrap themes</a><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        </div>
+    </div>
+</footer>
 
 </html>
