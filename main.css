@@ -120,3 +120,15 @@ form button:hover {
     width: auto;
 
 }
+#biography {font-size: x-large; color: #6C00FF;
+
+}
+#additional-links {display: flex; flex-direction: row; justify-content: space-between;
+
+}
+#social-media {display: flex; flex-direction: column;
+
+}
+#space-block {flex-grow: 1;
+
+}
