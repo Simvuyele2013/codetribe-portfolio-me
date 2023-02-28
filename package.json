@@ -1,0 +1,23 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "aws-exports.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simvuyele2013/codetribe-portfolio-me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Simvuyele2013/codetribe-portfolio-me/issues"
+  },
+  "homepage": "https://github.com/Simvuyele2013/codetribe-portfolio-me#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
